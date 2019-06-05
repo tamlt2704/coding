@@ -1,6 +1,11 @@
 import sys
+import os
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
+
+
+DEBUG = os.environ.get('DEBUG', 'on') == 'on'
+SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
 
 settings.configure(
 	DEBUG=True,
