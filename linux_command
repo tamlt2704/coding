@@ -11,6 +11,8 @@
 # create new user:            CREATE USER 'username'@'host' IDENTIFIED BY 'password';
 # grant permission:           GRANT type_of_permission ON database_name.table_name TO ‘username’@'localhost’;
 # revoke permission:          REVOKE type_of_permission ON database_name.table_name FROM ‘username’@‘localhost’;
+                              type_of_permission: ALL PRIVILEGES, CREATE, DROP, DELETE, INSERT, SELECT, UPDATE, GRANT OPTION
+# flush privileges:           FLUSH PRIVILEGES;
 # review user permission:     SHOW GRANTS username;
 # drop user:                  DROP USER ‘username’@‘localhost’;
 # create table:               CREATE TABLE potluck (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
