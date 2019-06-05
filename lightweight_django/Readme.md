@@ -15,3 +15,5 @@ copy hello.py to project_name/project_name.py
 django-admin createproject foo --template=project_name
 
 variable pass as the context: project_name, project_directory, secret_key, docs_version
+
+2. Stateless web application
