@@ -7,6 +7,7 @@ from django.core.wsgi import get_wsgi_application
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 SECRET_KEY = os.environ.get('SECRET_KEY', 'yjeq-g^0l#9%p3gyi7@!)rieq=gzjt=2&jxovmrk37-jhrtlfx')
+BASE_DIR = os.path.realpath(os.path.dirname(__file__))
 
 settings.configure(
 	DEBUG=True,
@@ -18,13 +19,25 @@ settings.configure(
 		'django.middleware.csrf.CsrfViewMiddleware',
 		'django.middleware.clickjacking.XFrameOptionsMiddleware',
 	),
+	INSTALLED_APPS=(
+		'django.contrib.staticfiles',
+	),
+	TEMPLATE_DIRS=(
+		os.path.join(BASE_DIR, 'templates'),
+	),
+	STATIC_DIRS=(
+		os.path.join(BASE_DIR, 'static'),
+	),
+	STATIC_URL='/static/',
 )
 
 from django import forms
 from django.conf.urls import url
+from django.urls import reverse
 from django.core.cache import cache
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import etag
+from django.shortcuts import render
 
 from io import BytesIO
 from PIL import Image, ImageDraw
@@ -55,7 +68,10 @@ class ImageForm(forms.Form):
 		return content
 
 def index(request):
-    return HttpResponse('hello world')
+	example = reverse('placeholder', kwargs={'width': 50, 'height': 50})
+	context = {'example': request.build_absolute_uri(example)}
+	#return render(request, 'home.html', context)
+	return render(request, 'home.html')
 
 
 def generate_etag(request, width, height):
