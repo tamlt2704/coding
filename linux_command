@@ -1,0 +1,28 @@
+1. mysql
+
+# install mysql:              sudo apt-get install mysql-server
+# access mysql:               mysql -u root -p
+# show database:              SHOW DATABASES;
+# create database:            CREATE DATABASE database_name;
+# select database:            USE database_name;
+# show tables:                SHOW TABLES;
+# get user, host:             SELECT user, host FROM mysql.user;
+# show databses:              SHOW DATABASES;
+# create new user:            CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+# grant permission:           GRANT type_of_permission ON database_name.table_name TO ‘username’@'localhost’;
+# revoke permission:          REVOKE type_of_permission ON database_name.table_name FROM ‘username’@‘localhost’;
+# review user permission:     SHOW GRANTS username;
+# drop user:                  DROP USER ‘username’@‘localhost’;
+# create table:               CREATE TABLE potluck (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+                                                    name VARCHAR(20),
+                                                    food VARCHAR(30),
+                                                    confirmed CHAR(1), 
+                                                    signup_date DATE);
+# show table detail:          DESCRIBE table;
+# insert data:                INSERT INTO tablename ('col1',....) values ('value1',...)
+# select data:                SELECT * FROM tablename;
+# update:                     UPDATE table SET col = 'val' WHERE condition
+# add column:                 ALTER TABLE tablename ADD email VARCHAR(40);
+# delte column:               ALTER TABLE table DROP column;
+# delete row:                 DELETE from [table name] where [column name]=[field text];
+  
