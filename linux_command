@@ -28,3 +28,9 @@
 # delte column:               ALTER TABLE table DROP column;
 # delete row:                 DELETE from [table name] where [column name]=[field text];
   
+
+
+2. qemu
+
+# create image: qemu-img create alpine.qcow 5G
+# run iso: qemu-system-x86_64.exe -hda alpine.qcow -cdrom alpine-extended-3.9.4-x86_64.iso -boot d -net nic -net user -m 2048
