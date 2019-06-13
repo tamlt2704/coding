@@ -35,6 +35,7 @@
 # create image: qemu-img create alpine.qcow 5G
 # run iso: qemu-system-x86_64.exe -hda alpine.qcow -cdrom alpine-extended-3.9.4-x86_64.iso -boot d -net nic -net user -m 2048 -curses
 # boot from disk img: boot -c
+# add cpu: -cpu max -smp number_of_core
 
 3. docker
 # run command in container: docker exec <container> <command>
