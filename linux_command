@@ -44,3 +44,8 @@
 
 4. Linux every day
 # download from list of urls:  xargs -n 1 curl -O < file_contain_urls
+
+5. network commands
+# get ip from address:                  host vnexpress.net
+# find ips in my local:                 arp -a
+
