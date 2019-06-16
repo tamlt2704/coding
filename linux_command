@@ -43,7 +43,9 @@
 # run command in container: docker exec <container> <command>
 
 4. Linux every day
-# download from list of urls:  xargs -n 1 curl -O < file_contain_urls
+# download from list of urls:           xargs -n 1 curl -O < file_contain_urls
+# disable gdm:                          update-rc.d -f gdm remove
+# enable gdm and startX:                update-rc.d -f gdm defaults && startx
 
 5. network commands
 # get ip from address:                  host vnexpress.net
