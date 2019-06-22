@@ -1,0 +1,54 @@
+1. mysql
+
+# install mysql:              sudo apt-get install mysql-server
+# access mysql:               mysql -u root -p
+# show database:              SHOW DATABASES;
+# create database:            CREATE DATABASE database_name;
+# select database:            USE database_name;
+# show tables:                SHOW TABLES;
+# get user, host:             SELECT user, host FROM mysql.user;
+# show databses:              SHOW DATABASES;
+# create new user:            CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+# grant permission:           GRANT type_of_permission ON database_name.table_name TO ‘username’@'localhost’;
+# revoke permission:          REVOKE type_of_permission ON database_name.table_name FROM ‘username’@‘localhost’;
+                              type_of_permission: ALL PRIVILEGES, CREATE, DROP, DELETE, INSERT, SELECT, UPDATE, GRANT OPTION
+# flush privileges:           FLUSH PRIVILEGES;
+# review user permission:     SHOW GRANTS username;
+# drop user:                  DROP USER ‘username’@‘localhost’;
+# create table:               CREATE TABLE potluck (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+                                                    name VARCHAR(20),
+                                                    food VARCHAR(30),
+                                                    confirmed CHAR(1), 
+                                                    signup_date DATE);
+# show table detail:          DESCRIBE table;
+# insert data:                INSERT INTO tablename ('col1',....) values ('value1',...)
+# select data:                SELECT * FROM tablename;
+# update:                     UPDATE table SET col = 'val' WHERE condition
+# add column:                 ALTER TABLE tablename ADD email VARCHAR(40);
+# delte column:               ALTER TABLE table DROP column;
+# delete row:                 DELETE from [table name] where [column name]=[field text];
+  
+
+
+2. qemu
+
+# create image: qemu-img create alpine.qcow 5G
+# run iso: qemu-system-x86_64.exe -hda alpine.qcow -cdrom alpine-extended-3.9.4-x86_64.iso -boot d -net nic -net user -m 2048 -curses
+# boot from disk img: boot -c
+# add cpu: -cpu max -smp number_of_core
+# resize img: qemu-img <img.qcow> +5G
+# hosfwd: -net user,hostfwd=tcp::5555-:22 --> ssh -p5555 root@localhost
+
+3. docker
+# run command in container: docker exec <container> <command>
+
+4. Linux every day
+# download from list of urls:           xargs -n 1 curl -O < file_contain_urls
+# disable gdm:                          update-rc.d -f gdm remove
+# enable gdm and startX:                update-rc.d -f gdm defaults && startx
+# add user to sudo:                     adduser <username> sudo
+
+5. network commands
+# get ip from address:                  host vnexpress.net
+# find ips in my local:                 arp -a
+
